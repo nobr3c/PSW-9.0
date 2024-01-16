@@ -4,7 +4,7 @@ Criar a pasta do Python, rodar o comando no terminal:<p>
     python -m venv venv <p>
     venv\Scripts\Activate <p>
 
-    ![Alt text](image.png)
+![image](https://github.com/nobr3c/PSW-9.0/assets/138419133/6170008f-d9c2-4a1e-b479-994e3239e083)
 
 # Documentação
 
