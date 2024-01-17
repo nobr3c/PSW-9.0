@@ -100,7 +100,7 @@
                 <br>
                
                 {% for flash in flashcards %}
-                        <div class="box-new-flashcard" >
+                    <div class="box-new-flashcard"  onclick="flip_card({{flash.id}})">
                             <div class="flashcard">
 
                                 <div class="flashcard-categoria">
@@ -115,7 +115,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="resposta-flashcard">
+                            <div class="resposta-flashcard" id="{{flash.id}}">
                                 {{flash.resposta}}
                             </div>
                         </div>
@@ -127,4 +127,22 @@
         </div>
     </div>
     
+
+   <!-- Crie o arquivo /templates/static/flashcard/js/flashcard.js -->
+    <script>
+
+        function flip_card(id){
+            card = document.getElementById(id)
+        
+            if (card.style.display == 'none' || card.style.display == ''){
+                card.style.display = "block"
+            }else{
+                card.style.display = 'none'
+            }
+        
+        }
+
+    </script>
+
+
 {% endblock 'conteudo' %}
