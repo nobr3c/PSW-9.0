@@ -18,7 +18,7 @@
             <div class="col-md">
                 
                 <div class="box-form">
-                    <form action="" method="POST"> {% csrf_token %}
+                    <form action="{% url 'novo_flashcard' %}" method="POST"> {% csrf_token %}
                         <h3>Novo flashcard</h3>
                         {% if messages %}
                             <br>
@@ -39,14 +39,19 @@
                             
                                 <div class="col-md">
                                     <label for="">Categoria</label>
-                                    <select class="form-select" name="categoria">
-                                        
+                                    <select class="form-select" name="categoria">                                        
+                                        {% for categoria in categorias %}
+                                            <option value="{{categoria.id}}">{{categoria.nome}}                                                
+                                            </option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                                 <div class="col-md">
                                     <label for="">Dificuldade</label>
                                     <select class="form-select" name="dificuldade">
-                                        
+                                        {% for dificuldade in dificuldades %}
+                                            <option value="{{dificuldade.0}}">{{dificuldade.1}}</option>
+                                        {% endfor %}                                        
                                     </select>
 
                                 </div>
@@ -62,19 +67,25 @@
 
             </div>
             <div class="col-md">
-                <form action="" method="GET">
+                <form action="{% url 'novo_flashcard' %}" method="GET">
                     <div class="row">
                         <div class="col-md">
                             <label for="">Categoria</label>
                             <select name="categoria" id="" class="form-select">
-                                <option value=""></option>
+                                <option value="">Todas as Categorias</option>
+                                {% for categoria in categorias %}
+                                    <option value="{{categoria.id}}">{{categoria.nome}}</option>
+                                {% endfor %}
                                 
                             </select>
                         </div>
                         <div class="col-md">
                             <label for="">Dificuldade</label>
                             <select name="dificuldade" id="" class="form-select">
-                                <option value=""></option>
+                                <option value="">Todas as Dificuldades</option>
+                                {% for dificuldade in dificuldades %}
+                                    <option value="{{dificuldade.0}}">{{dificuldade.1}}</option>
+                                {% endfor %} 
                             </select>
                         </div>
                         <div class="col-md">
@@ -88,28 +99,29 @@
                 <br>
                 <br>
                
-                    <div class="box-new-flashcard">
-                        <div class="flashcard ">
+                {% for flash in flashcards %}
+                        <div class="box-new-flashcard" >
+                            <div class="flashcard">
 
-                            <div class="flashcard-categoria">
-                                Matematica
-                            </div>
+                                <div class="flashcard-categoria">
+                                    {{flash.categoria.nome}}
+                                </div>
 
-                            <a href=""><i class='icone-exit bx bx-x-circle'></i></a>
-                            <br>
-                            <br>
-                            <div class="flashcard-box-item">
-                                <p class="flashcard-item">1 + 1 = 2</p>
+                                <a href=""><i class='icone-exit bx bx-x-circle'></i></a>
+                                <br>
+                                <br>
+                                <div class="flashcard-box-item">
+                                    <p class="flashcard-item">{{flash.pergunta}} ?</p>
+                                </div>
+                                
                             </div>
-                            
+                            <div class="resposta-flashcard">
+                                {{flash.resposta}}
+                            </div>
                         </div>
-                        <div class="resposta-flashcard">
-                            Sim
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                
+                        <br>
+                        <br>
+                {% endfor %}                
 
             </div>
         </div>
