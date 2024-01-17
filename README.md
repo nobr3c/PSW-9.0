@@ -1,5 +1,14 @@
 # PyStackWeek 9.0 - 01/2024
 
+✅ Roteamento de URLs
+✅ Visualizações
+✅ Gerenciamento de HTML
+✅ Arquivos estáticos
+✅ Formulários
+✅ Conexão a banco de dados
+✅ Arquivos de mídia
+✅ Administrador Django
+
 Criar a pasta do Python, rodar o comando no terminal:<p>
     python -m venv venv <p>
     venv\Scripts\Activate <p>
