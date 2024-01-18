@@ -133,3 +133,15 @@ def listar_desafio(request):
             'desafios': desafios,
         },
     )
+
+def desafio(request, id):
+    desafio = Desafio.objects.get(id=id)
+
+    if request.method == 'GET':
+        return render(
+            request,
+            'desafio.html',
+            {
+                'desafio': desafio,
+            },
+        )
