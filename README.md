@@ -18,7 +18,7 @@ Criar a pasta do Python, rodar o comando no terminal:<p>
 # Documentação
 
 #### Downloand: <Br>
-[​PYTHON](https://www.python.org/)  | [VsCode](https://code.visualstudio.com/download) | [Box Icons](https://boxicons.com/)|
+[​PYTHON](https://www.python.org/)  | [VsCode](https://code.visualstudio.com/download) | [Box Icons](https://boxicons.com/)| [Chartjs](https://www.chartjs.org/) | 
 
 #### RoadMap Django
 [RoadMap Django Miro](https://miro.com/app/board/uXjVP0haEzs=/)
